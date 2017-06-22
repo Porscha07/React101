@@ -88,14 +88,35 @@ function Team(props){
 // var with the name of the Component
 //the only required property is render
 //can make decisions. the dom has to change based on if someone selects a  plus or minus.
-var Counter= React.createClass({
-	render: function(){
+var Counter= React.createClass({ //.createClass is a constructor witch makes Counter an object. ( counter is a react class)
+	//A set React Property(like render, is getInitialState() 
+		getInitialState:function() {//prop 1 never mutate the state
+			//this functions sets the initial state value of a varariable
+			//it returns a single object
+			var stateObject = {
+				gamesBack:0
+			}
+			return stateObject;
+		},
+		addGame: function(){//prop 2
+			this.setState({
+				gamesBack: this.state.gamesBack + 1
+			})
+		},
+		loseGame: function(){//prop 3
+			this.setState({
+				gamesBack: this.state.gamesBack - 1
+			})
+		},
+
+	render: function(){//prop 4
 		//back to the good old days...
+		//counter object- is the (this-team( 5 objects we will map through)) with a property of gamesback.
 		return(
 			<div class="counter">
-				<button className="btn btn-success">+</button>
-				<div className="gamesBack">games-back will go here</div>
-				<button className="btn btn-danger">-</button>
+				<button onClick= {this.addGame}className="btn btn-success">+</button>
+				<div className="gamesBack">{this.state.gamesBack}</div> 
+				<button onClick={this.loseGame}className="btn btn-danger">-</button>
 			</div>
 		)
 	}
