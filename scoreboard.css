@@ -2,3 +2,14 @@
 	float: left;
 	padding: 20px;
 }
+
+.header{
+	text-align: center;
+	font-size: large;
+}
+
+.row{
+	/* text-align: center; */
+	margin-left: auto;
+	margin-right: auto;
+}
