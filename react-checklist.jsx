@@ -91,18 +91,16 @@ function FilterableProductTable(props){
 		)
 	}
 	//**********************Product Row*************
-	function ProductCategoryRow (){
+	function ProductCategoryRow (props){
 		return(
-			<div className="row category-row">
-				<div className="col-sm-12 product-category">
-					Product Category
-				</div>
-			</div>
+				<tr>
+					<th>{props.category}</th>
+				</tr>
 		)
 	}
 	//************************Product Category Row***********	
 
-	function ProductRow (){
+	function ProductRow (props){
 		return(
 				<div className="row">
 					<div className="col-sm-4 productName">
